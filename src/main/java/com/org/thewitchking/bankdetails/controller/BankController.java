@@ -18,13 +18,12 @@ public class BankController {
 
     @Autowired 
     BankService service;
-
-//    @GetMapping("/branches")
-//    @ResponseBody
-//    public List<Bank_Branches> getBankBranches(@RequestParam("q") String q) {
-//        return service.getBankByAll(q);
-//    }
     
+    @GetMapping("/")
+    public String getApi() {
+    	return "please check the api's mentioned";
+    }
+ 
 	@GetMapping("/branches/autocomplete{?q,limit,offset}")
     @ResponseBody
     public List<Bank_Branches> getByBranch(@RequestParam("q") String q, @RequestParam("offset") int offset,
